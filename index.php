@@ -15,46 +15,61 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
+<style>
+    .br {
+        background-color: aquamarine
+    }
+    .br1{
+        background:rgba(97, 121, 255, 0.822) url("https://htmlcheatsheet.com/images/logo-css.png") no-repeat fixed 0 0;
+    }
+</style>
 
 <body>
+    <body class="br"></body>
+
     <div class="container">
+        <p><img src="https://kasikornresearch.com/SiteCollectionDocuments/analysis/business/food/resturant_Banner2.jpg"
+                alt="รูปภาพ" height="450" width="1285" vspace="20" hspace="10">
+                <h3 class="br1">Ros Dee Kitchen</h3>
+                
         <form class="row g-3">
             <div class="col-md-6">
-                <label for="ShopName" class="form-label">ShopName</label>
+                
+                <label for="ShopName" class="form-label"><u>ShopName</u></label>
                 <input type="text" class="form-control" id="ShopName">
             </div>
             <div class="col-md-6">
-                <label for="hfRowIndex" class="form-label"> </label>
+                <label for="hfRowIndex" class="form-label"></label>
                 <input type="hidden" class="form-control" id="hfRowIndex">
             </div>
             <div class="col-md-6">
-                <label for="Idfood" class="form-label">ID</label>
+                <label for="Idfood" class="form-label"><u> ID</u></label>
                 <input type="text" class="form-control" id="Idfood" value="1">
             </div>
             <div class="col-6">
-                <label for="Namefood" class="form-label">Name</label>
+                <label for="Namefood" class="form-label"><u>Name</u> </label>
                 <input type="text" class="form-control" id="Namefood" placeholder="">
             </div>
             <div class="col-6">
-                <label for="pricefood" class="form-label">Price</label>
+                <label for="pricefood" class="form-label"><u> Price</u></label>
                 <input type="number" class="form-control" id="pricefood" placeholder=" ">
             </div>
             <div class="col-md-6">
-                <label for="link" class="form-label">link</label>
+                <label for="link" class="form-label"><u>link</u> </label>
                 <input type="text" class="form-control" id="link">
             </div>
-                <div class="col-4">
-                    <button type="button" class="btn btn-success" id='btnAdd'>add</button>
-                </div>
-                <div class="col-4">
-                    <button type="button" class="btn btn-primary" id='btnUpdate' style="display: none;">Update</button>
-                </div>
-                <div class="col-4">
-                    <button type="button" class="btn btn-danger" id='btnClear'>delete data</button>
-                </div>
+            <div class="col-4">
+                <button type="button" class="btn btn-success" id='btnAdd'>add</button>
+            </div>
+            <div class="col-4">
+                <button type="button" class="btn btn-primary" id='btnUpdate' style="display: none;">Update</button>
+            </div>
+            <div class="col-4">
+                <button type="button" class="btn btn-danger" id='btnClear'>delete data</button>
+            </div>
         </form>
     </div>
-    <!--ฟอม-->
+    <!--ฟอร์ม-->
     <table id="tblAll" class="table table-striped" style="margin-top:23px">
         <thead>
             <tr>
@@ -75,7 +90,7 @@
 <script>
     $(function () {
         $('#btnAdd').on('click', function () {
-            var ShopName ,namefood, pricefood, link ,Idfood;
+            var ShopName, namefood, pricefood, link, Idfood;
             ShopName = $("#ShopName").val();
             Idfood = $("#Idfood").val();
             Namefood = $("#Namefood").val();
@@ -85,7 +100,7 @@
             var edit = "<a class='edit' href='JavaScript:void(0);' >Edit</a>";
             var del = "<a class='delete' href='JavaScript:void(0);'>Delete</a>";
 
-            if (Namefood == "" || pricefood == "" || ShopName == " "|| link == " ") {
+            if (Namefood == "" || pricefood == "" || ShopName == " " || link == " ") {
                 alert("กรุณากรอกข้อมูล!");
             } else {
                 var table = "<tr><td>" + Idfood + "</td><td>" + ShopName + "</td><td>" + Namefood + "</td><td>" + pricefood + "</td><td>" + link + "</td><td>" + edit + "</td><td>" + del + "</td></tr>";
@@ -100,7 +115,7 @@
         });
 
         $('#btnUpdate').on('click', function () {
-            var ShopName ,namefood, pricefood, link ,Idfood;
+            var ShopName, namefood, pricefood, link, Idfood;
             ShopName = $("#ShopName").val();
             Idfood = $("#Idfood").val();
             Namefood = $("#Namefood").val();
@@ -130,7 +145,7 @@
             Clear();
         });
 
-        $("#tblAll").on("click",".edit", function (e) {
+        $("#tblAll").on("click", ".edit", function (e) {
             var row = $(this).closest('tr');
             $('#hfRowIndex').val($(row).index());
             var td = $(row).find("td");
