@@ -47,7 +47,6 @@
 
         <select id="optCate" class="form-control"> 
             <option value="1"> Hello </option>
-            <option value="1"> Hello </option>
         </select>
     </div>
 
